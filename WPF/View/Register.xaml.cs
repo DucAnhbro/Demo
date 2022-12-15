@@ -31,7 +31,7 @@ namespace WPF.View
         }
         public bool checkAccountPassword(string ac)//check username va password
         {
-            return Regex.IsMatch(ac, @"^[a-za-z0-9]$");
+            return Regex.IsMatch(ac, @"^[0-9]$");
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace WPF.View
                 MessageBox.Show("Email not vaild");
                 return;
             }
-            if (!checkAccountPassword(pass))
+            if (checkAccountPassword(pass))
             {
                 MessageBox.Show("password not valid");
                 return;
@@ -58,9 +58,9 @@ namespace WPF.View
             context.Accounts.Add(a);
             context.SaveChanges();
             MessageBox.Show("register successful!");
-            Close();
+            //this.Close();
             MainWindow main = new MainWindow();
-            main.ShowDialog();
+            main.Show();
         }
     }
 }

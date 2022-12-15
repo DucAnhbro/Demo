@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 using WPF.Logic;
 using WPF.Models;
 
-namespace WPF
+namespace WPF.View
 {
     /// <summary>
     /// Interaction logic for Students.xaml
